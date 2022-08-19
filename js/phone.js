@@ -26,9 +26,11 @@ function updatePhonePrice(newPhoneNumber){
 document.getElementById('phone-number-plus').addEventListener('click', function(){
     const newPhoneNumber = updatePhoneNumber(true);
     updatePhonePrice(newPhoneNumber);
+    calculateSubtotal()
 })
 
 document.getElementById('phone-number-minas').addEventListener('click', function(){
     const newPhoneNumber = updatePhoneNumber(false);
     updatePhonePrice(newPhoneNumber);
+    calculateSubtotal()
 })

@@ -26,6 +26,7 @@ function updateCasePrice(newCaseNumber){
 document.getElementById('btn-case-plus').addEventListener('click', function(){
     const newCaseNumber = updateCaseNumber(true);
     updateCasePrice(newCaseNumber);
+    calculateSubtotal()
 })
 
 document.getElementById('btn-case-minas').addEventListener('click', function(){
@@ -39,4 +40,5 @@ document.getElementById('btn-case-minas').addEventListener('click', function(){
     // }
     const newCaseNumber = updateCaseNumber(false);
     updateCasePrice(newCaseNumber);
+    calculateSubtotal()
 })
