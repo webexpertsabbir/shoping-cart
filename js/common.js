@@ -5,12 +5,22 @@ function getTextElementByValue(elmentId){
     return carentPhoneTotal;
 }
 
+function setTextElementValueById(elementId, value){
+    const carentSubtotalPrice = document.getElementById(elementId);
+    carentSubtotalPrice.innerText = value;
+}
+
 function calculateSubtotal(){
     const carentPhoneTotal = getTextElementByValue('phone-total-price');
     const carentCaseTotal = getTextElementByValue('total-price');
 
     const carentSubTotal = carentCaseTotal + carentPhoneTotal;
-    const carentSubtotalPrice = document.getElementById('subtotal');
-    carentSubtotalPrice.innerText = carentSubTotal;
+    setTextElementValueById('subtotal', carentSubTotal);
+
+    const taxAmountString = (carentSubTotal * 0.1).toFixed(2);
+    const taxAmount = parseFloat(taxAmountString);
+    setTextElementValueById('tax', taxAmount);
+
+    const finalAmount = carentSubTotal + taxAmount;
+    setTextElementValueById('final-amount', finalAmount);
 }
-console.log('hello')
